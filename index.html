@@ -185,6 +185,8 @@
 						<a class="page-scroll btn btn-xl" onclick= "checkLogin">Agendar Horário</a>
 						<script>
 						function checkLogin(){
+							window.alert("Por favor, conecte-se com o Facebook para continuar.");
+						
 							FB.getLoginStatus(function(response) {
 							if (response.status === 'connected') {
 								// the user is logged in and has authenticated your
