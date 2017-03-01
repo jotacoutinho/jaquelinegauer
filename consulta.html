@@ -208,7 +208,7 @@
                         <label class="radio-inline"><input type="radio" name="optradio" id="optCash">Transferência Bancária (5% de desconto)</label>
                         <label class="radio-inline"><input type="radio" name="optradio" id="optCielo">Cielo</label>
                         <br><br>
-                        <h2>Que tipo de atendimento você deseja?</h2>
+                        <h2 style="display: none;">Que tipo de atendimento você deseja?</h2>
                         <br><br>
 
                         <div class="cash" style="display: none;">
@@ -298,7 +298,7 @@
                     $("select").change(function(){
                         $(this).find("option:selected").each(function(){
                             var optionValue = $(this).attr("value");
-                            if(optionValue == "#email"){
+                            if(optionValue == "optCash"){
                                 window.alert("HIIIIIIIIIIIIIII");
                             } else{
                                 
