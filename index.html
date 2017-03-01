@@ -50,13 +50,13 @@
 		      testAPI();
 		    } else if (response.status === 'not_authorized') {
 		      // The person is logged into Facebook, but not your app.
-		      document.getElementById('status').innerHTML = 'Please log ' +
-		        'into this app.';
+		      document.getElementById('status').innerHTML = 'Por favor, ' +
+		        'conecte-se com o Facebook.';
 		    } else {
 		      // The person is not logged into Facebook, so we're not sure if
 		      // they are logged into this app or not.
-		      document.getElementById('status').innerHTML = 'Please log ' +
-		        'into Facebook.';
+		      document.getElementById('status').innerHTML = 'Por favor, ' +
+		        'conecte-se com o Facebook.';
 		    }
 		  }
 
@@ -112,7 +112,7 @@
 		    FB.api('/me', function(response) {
 		      console.log('Successful login for: ' + response.name);
 		      document.getElementById('status').innerHTML =
-		        'Thanks for logging in, ' + response.name + '!';
+		        'Obrigado por se conectar, ' + response.name + '!';
 		    });
 		  }
 		</script>
@@ -169,7 +169,7 @@
         <div class="container">
             <div class="intro-text">
                 
-                <div class="intro-heading">Bem Vindo1!</div>
+                <div class="intro-heading">Bem Vindo!</div>
 
                 <div class="col-lg-12">
                 <a href="#services" class="page-scroll btn btn-xl">Sou novo aqui</a>
