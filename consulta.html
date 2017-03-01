@@ -136,7 +136,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Jaqueline Gauer1</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Jaqueline Gauer</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -201,11 +201,7 @@
 
 
 
-        <script>
-            $('#payment input').on('change', function() {
-            alert($('input[name=optradio]:checked', '#payment').val()); 
-            });
-        </script>
+        
 
 
         <div class ="container">
@@ -213,17 +209,27 @@
                 <div class="col-lg-12 text-center">
                     <div class="form-group">
                         <h2>Forma de pagamento</h2>
-                        <script>
-                        $('#myForm input').on('change', function() {
-                        alert($('input[name=radioName]:checked', '#myForm').val()); 
-                        });
-                        </script>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                        <form id="myForm">
-                        <input type="radio" name="radioName" value="1" /> 1 <br />
-                        <input type="radio" name="radioName" value="2" /> 2 <br />
-                        <input type="radio" name="radioName" value="3" /> 3 <br />
+                        <form id="payment">
+                        <label class="radio-inline"><input type="radio" name="optradio" value="1" onchange="optCash()" />Transferência Bancária (5% de desconto)</label>
+                        <label class="radio-inline"><input type="radio" name="optradio" value="2" onchange="optCielo()"/>Cielo</label>
                         </form>
+
+                        <script>
+                        
+                            function optCash(){
+                                window.alert("HIIIIIIIIII");
+                            }
+
+                        </script>
+
+                        <script>
+                        
+                            function optCielo(){
+                                window.alert("EOQQ");
+                            }
+
+                        </script>
+
                         <br><br>
                         <h2 style="display: none;">Que tipo de atendimento você deseja?</h2>
                         <br><br>
