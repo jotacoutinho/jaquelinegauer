@@ -202,17 +202,36 @@
 
         <div class ="container">
             <div class ="row">
-                <div id="modeSkype" class="col-lg-12 text-center">
+                <div class="col-lg-12 text-center">
                     <div class="form-group">
+                        <h2>Forma de pagamento</h2>
+                        <label class="radio-inline"><input type="radio" name="optradio" id="optCash">Transferência Bancária (5% de desconto)</label>
+                        <label class="radio-inline"><input type="radio" name="optradio" id="optCielo">Cielo</label>
+                        <br><br>
                         <h2>Que tipo de atendimento você deseja?</h2>
                         <br><br>
+
+                        <div class="cash" style="display": none>
                         <select class="form-control" id="sel1">
                         <option>Escolha uma das opções</option>
-                        <option value="email">E-mail, 3 retornos (R$70,00).</option>
-                        <option value="skype1">Skype, 1 sessão (R$90,00)</option>
-                        <option value="skype5">Skype, 5 sessões (R$400,00)</option>
-                        <option value="skype10">Skype, 10 sessões (R$700,00)</option>
+                        <option value="1">E-mail, 3 retornos (R$66,50).</option>
+                        <option value="2">Skype, 1 sessão (R$85,50)</option>
+                        <option value="3">Skype, 5 sessões (R$380,00)</option>
+                        <option value="4">Skype, 10 sessões (R$665,00)</option>
                         </select>
+                        </div>
+
+                        <div class="cielo" style="display": none>
+                        <select class="form-control" id="sel1">
+                        <option>Escolha uma das opções</option>
+                        <option value="1">E-mail, 3 retornos (R$70,00).</option>
+                        <option value="2">Skype, 1 sessão (R$90,00)</option>
+                        <option value="3">Skype, 5 sessões (R$400,00)</option>
+                        <option value="4">Skype, 10 sessões (R$700,00)</option>
+                        </select>
+                        </div>
+
+
                     </div>
                 </div>
 
