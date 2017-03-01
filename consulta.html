@@ -205,8 +205,10 @@
                 <div class="col-lg-12 text-center">
                     <div class="form-group">
                         <h2>Forma de pagamento</h2>
-                        <label class="radio-inline"><input type="radio" name="optradio" id="optCash">Transferência Bancária (5% de desconto)</label>
-                        <label class="radio-inline"><input type="radio" name="optradio" id="optCielo">Cielo</label>
+                        <form id="payment">
+                        <label class="radio-inline"><input type="radio" name="optradio" value="1">Transferência Bancária (5% de desconto)</label>
+                        <label class="radio-inline"><input type="radio" name="optradio" value="2">Cielo</label>
+                        </form>
                         <br><br>
                         <h2 style="display: none;">Que tipo de atendimento você deseja?</h2>
                         <br><br>
@@ -294,18 +296,9 @@
 
 
                 <script>
-                $(document).ready(function(){
-                    $("select").change(function(){
-                        $(this).find("option:selected").each(function(){
-                            var optionValue = $(this).attr("value");
-                            if(optionValue == "optCash"){
-                                window.alert("HIIIIIIIIIIIIIII");
-                            } else{
-                                
-                            }
-                        });
-                    }).change();
-                });
+                    $('#payment input').on('change', function() {
+                    alert($('input[name=radioName]:checked', '#payment').val()); 
+                    });
                 </script>
 
 
