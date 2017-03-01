@@ -202,19 +202,15 @@
 
         <div class ="container">
             <div class ="row">
-                <div id="modeSelection" class="col-lg-12 text-center">
-                    <h2>Que tipo de atendimento você deseja?</h2>
-                    <label class="radio-inline"><input type="radio" name="optradio" id="chat">Chat (via Skype)</label>
-                    <label class="radio-inline"><input type="radio" name="optradio" id="email">E-mail</label>
-                </div>
-
                 <div id="modeSkype" class="col-lg-12 text-center">
                     <div class="form-group">
                       <label for="sel1">Número de seções:</label>
+                      <br>
                       <select class="form-control" id="sel1">
-                        <option>1 sessão  (R$90,00)</option>
-                        <option>5 sessões  (R$400,00)</option>
-                        <option>10 sessões (R$700,00)</option>
+                        <option>E-mail, 3 retornos (R$70,00).</option>
+                        <option>Skype, 1 sessão (R$90,00)</option>
+                        <option>Skype, 5 sessões (R$400,00)</option>
+                        <option>Skype, 10 sessões (R$700,00)</option>
                       </select>
                     </div>
                 </div>
@@ -222,20 +218,7 @@
 
 
                 <script>
-                    $("#modeSelection :input").change(function(){
-                        if($("#chat").prop("checked") == true){
-                            $("#modeSkype").show();
-                        }
-                        else{
-                            $("#modeSkype").hide();
-                        }
-
-
-
-
-
-
-                    });
+                   
                 </script>
 
 
