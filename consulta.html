@@ -267,25 +267,29 @@
                                 var val1 = document.getElementById('cashForm').value;
                                 var val2 = document.getElementById('cieloForm').value;
 
-                                var divEmail = document.getElementById('emailInput')
+                                var divEmail = document.getElementById('emailInput');
+                                var divOneAppo = document.getElementById('oneAppoInput');
+                                
 
-                                if(val1 == "1")
+
+                                if(val1 == "1" || val2 == "1")
                                 {
                                     divEmail.style.display = 'block';
-                                    
+                                    divOneAppo.style.display = 'none';
 
                                 }
-                                else if(val2 == "1")
+                                else if(val1 == "2" || val2 == "2")
                                 {
-                                    divEmail.style.display = 'block';
-                                    
+                                    divEmail.style.display = 'none';
+                                    divOneAppo.style.display = 'block';
+
                                 }
 
                                                            
                             }
 
                         </script>
-                        
+
                         <br><br>
                         <div class="form-group" style="display: none;" id="emailInput">
                         <label for="usr">Por favor, informe o seu endereço de E-mail desejado:</label>
@@ -293,8 +297,8 @@
                         </div>
 
 
-                        <div id="day" style="display: none;">
-                        <select class="form-control" id="sel1">
+                        <div id="oneAppoInput" style="display: none;">
+                        <select class="form-control" id="oneAppoDay">
                         <option>Dia</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -327,12 +331,11 @@
                         <option value="29">29</option>
                         <option value="30">30</option>
                         <option value="31">31</option>
-                        
                         </select>
-                        </div>
 
-                        <div id="month" style="display: none;">
-                        <select class="form-control" id="sel1">
+                        <br>
+
+                        <select class="form-control" id="oneAppoMonth">
                         <option>Mês</option>
                         <option value="1">Janeiro</option>
                         <option value="2">Fevereiro</option>
@@ -347,7 +350,10 @@
                         <option value="11">Novembro</option>
                         <option value="12">Dezembro</option>
                         </select>
+
                         </div>
+
+                
 
 
                     </div>
