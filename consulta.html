@@ -264,16 +264,16 @@
                         <script>
                         
                             function appoinmentSelection(){
-                                var div1 = document.getElementById('cashForm').id;
-                                var div2 = document.getElementById('cieloForm').id;
+                                var div1 = document.getElementById('cashForm');
+                                var div2 = document.getElementById('cieloForm');
 
-                                if(div1 == "cash1")
+                                if(div1.id == "cash1")
                                 {
                                     div1.style.display = 'block';
                                     div2.style.display = 'none';
 
                                 }
-                                else if(div2 == "cielo1")
+                                else if(div2.id == "cielo1")
                                 {
                                     div2.style.display = 'block';
                                     div1.style.display = 'none';
@@ -286,7 +286,7 @@
 
                         <div class="form-group" style="display: none;">
                         <label for="usr">Por favor, informe o seu endereço de E-mail desejado:</label>
-                        <input type="text" class="form-control" id="usr">
+                        <input type="text" class="form-control" id="emailInput">
                         </div>
 
 
