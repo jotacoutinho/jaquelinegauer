@@ -242,26 +242,55 @@
                         <br><br>
 
                         <div id="cash" style="display: none;">
-                        <select class="form-control" id="sel1">
+                        <select class="form-control" id="cashForm" onchange="appoinmentSelection()">
                         <option>Escolha uma das opções</option>
                         <option value="1" id="cash1">E-mail, 3 retornos (R$66,50)</option>
-                        <option value="2" id=cash>Skype, 1 sessão (R$85,50)</option>
-                        <option value="3">Skype, 5 sessões (R$380,00)</option>
-                        <option value="4" >Skype, 10 sessões (R$665,00)</option>
+                        <option value="2" id="cash2">Skype, 1 sessão (R$85,50)</option>
+                        <option value="3" id="cash3">Skype, 5 sessões (R$380,00)</option>
+                        <option value="4" id="cash4">Skype, 10 sessões (R$665,00)</option>
                         </select>
                         </div>
 
                         <div id="cielo" style="display: none;">
-                        <select class="form-control" id="sel1">
+                        <select class="form-control" id="cieloForm" onchange="appoinmentSelection()">
                         <option>Escolha uma das opções</option>
-                        <option value="1">E-mail, 3 retornos (R$70,00)</option>
-                        <option value="2">Skype, 1 sessão (R$90,00)</option>
-                        <option value="3">Skype, 5 sessões (R$400,00)</option>
-                        <option value="4">Skype, 10 sessões (R$700,00)</option>
+                        <option value="1" id="cielo1">E-mail, 3 retornos (R$70,00)</option>
+                        <option value="2" id="cielo2">Skype, 1 sessão (R$90,00)</option>
+                        <option value="3" id="cielo3">Skype, 5 sessões (R$400,00)</option>
+                        <option value="4" id="cielo4">Skype, 10 sessões (R$700,00)</option>
                         </select>
                         </div>
 
-                        <div id="day" style="display: block;">
+                        <script>
+                        
+                            function appoinmentSelection(){
+                                var div1 = document.getElementById('cashForm').id;
+                                var div2 = document.getElementById('cieloForm').id;
+
+                                if(div1 == "cash1")
+                                {
+                                    div1.style.display = 'block';
+                                    div2.style.display = 'none';
+
+                                }
+                                else if(div2 == "cielo1")
+                                {
+                                    div2.style.display = 'block';
+                                    div1.style.display = 'none';
+                                }
+
+                                                           
+                            }
+
+                        </script>
+
+                        <div class="form-group" style="display: none;">
+                        <label for="usr">Por favor, informe o seu endereço de E-mail desejado:</label>
+                        <input type="text" class="form-control" id="usr">
+                        </div>
+
+
+                        <div id="day" style="display: none;">
                         <select class="form-control" id="sel1">
                         <option>Dia</option>
                         <option value="1">1</option>
@@ -299,7 +328,7 @@
                         </select>
                         </div>
 
-                        <div id="month" style="display: block;">
+                        <div id="month" style="display: none;">
                         <select class="form-control" id="sel1">
                         <option>Mês</option>
                         <option value="1">Janeiro</option>
