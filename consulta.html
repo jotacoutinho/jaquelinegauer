@@ -264,19 +264,21 @@
                         <script>
                         
                             function appoinmentSelection(){
-                                var div1 = document.getElementById('cashForm');
-                                var div2 = document.getElementById('cieloForm');
+                                var val1 = document.getElementById('cashForm').value;
+                                var val2 = document.getElementById('cieloForm').value;
 
-                                if(div1.id == "cash1")
+                                var divEmail = document.getElementById('emailInput')
+
+                                if(val1 == "1")
                                 {
-                                    div1.style.display = 'block';
-                                    div2.style.display = 'none';
+                                    divEmail.style.display = 'block';
+                                    
 
                                 }
-                                else if(div2.id == "cielo1")
+                                else if(val2 == "1")
                                 {
-                                    div2.style.display = 'block';
-                                    div1.style.display = 'none';
+                                    divEmail.style.display = 'block';
+                                    
                                 }
 
                                                            
@@ -284,9 +286,9 @@
 
                         </script>
 
-                        <div class="form-group" style="display: none;">
+                        <div class="form-group" style="display: none;" id="emailInput">
                         <label for="usr">Por favor, informe o seu endereço de E-mail desejado:</label>
-                        <input type="text" class="form-control" id="emailInput">
+                        <input type="text" class="form-control">
                         </div>
 
 
