@@ -36,7 +36,7 @@
 
 </head>
 
-<body id="page-top" class="index" onload="checkLogin();">
+<body id="page-top" class="index">
 
 	 <!--Facebook Login SDK -->
             <script>
@@ -149,6 +149,8 @@
                             }
                             });
                         }
+
+                        window.onload = checkLogin();
                         </script>
 
 <!--Facebook Login-->
