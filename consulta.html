@@ -259,7 +259,7 @@
                         <br><br>
 
                         <div id="cash" style="display: none;">
-                        <select class="form-control" id="cashForm" onchange="appoinmentSelection()">
+                        <select class="form-control" id="cashForm" onchange="appointmentSelection()">
                         <option>Escolha uma das opções</option>
                         <option value="1" id="cash1">E-mail, 3 retornos (R$66,50)</option>
                         <option value="2" id="cash2">Skype, 1 sessão (R$85,50)</option>
@@ -269,7 +269,7 @@
                         </div>
 
                         <div id="cielo" style="display: none;">
-                        <select class="form-control" id="cieloForm" onchange="appoinmentSelection()">
+                        <select class="form-control" id="cieloForm" onchange="appointmentSelection()">
                         <option>Escolha uma das opções</option>
                         <option value="1" id="cielo1">E-mail, 3 retornos (R$70,00)</option>
                         <option value="2" id="cielo2">Skype, 1 sessão (R$90,00)</option>
@@ -336,7 +336,7 @@
 
                         <script>
                         
-                            function appoinmentSelection(){
+                            function appointmentSelection(){
                                 var val1 = document.getElementById('cashForm').value;
                                 var val2 = document.getElementById('cieloForm').value;
 
@@ -368,12 +368,14 @@
                                 }
                                 else if(val1 == "3" || val2 == "3")
                                 {
-                                    
+                                    divEmail.style.display = 'none';
+                                    divSkype.style.display = 'block';  
 
                                 }
                                 else if(val1 == "4" || val2 == "4")
                                 {
-                                    
+                                    divEmail.style.display = 'none';
+                                    divSkype.style.display = 'block';
 
                                 }
                             }
@@ -1408,14 +1410,19 @@
 
 
                 
-                <button type="button" class="btn btn-primary" ><i></i>Próximo</button>
+                <button type="button" class="btn btn-primary" onclick="scheduleOperation()"><i></i>Próximo</button>
 
 
             </div>
         </div>
 
 
+        <script>
+                function scheduleOperation(){
 
+                }
+
+        </script>
 
 
 
