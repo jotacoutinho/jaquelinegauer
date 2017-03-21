@@ -165,8 +165,8 @@
                                 var div1 = document.getElementById('payment');
                                 var div2 = document.getElementById('confirma');
 
-                                div1.style.display = 'block';
-                                div2.style.display = 'none';
+                                //div1.style.display = 'block';
+                                //div2.style.display = 'none';
                             },
                             error: function() {
                                 alert("ERRO");
@@ -427,6 +427,7 @@
                         <div class="form-group"  id="emailInput">
                         <label for="usr">Por favor, informe seu endereço de E-mail desejado:</label>
                         <input type="text" class="form-control" placeholder="E-mail" id="userEmail">
+                        <button type="button" class="btn btn-primary" id="confirma" onclick="scheduleOperation();">Confirma</button>
                         </div>
 
 
@@ -571,7 +572,7 @@
 
 
                         <button type="button" class="btn btn-primary" id="proximo" style="display: none;" onclick="scheduleOperation();">Próximo</button>
-                        <button type="button" class="btn btn-primary" id="confirma" onclick="scheduleOperation();">Confirma</button> 
+
 
                         <!-- FIRST TRY VVV -->
 
