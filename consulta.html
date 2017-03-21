@@ -108,35 +108,22 @@
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));
 
-          // Here we run a very simple test of the Graph API after login is
-          // successful.  See statusChangeCallback() for when this call is made.
-          function testAPI() {
-            console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function(response) {
-              console.log('Successful login for: ' + response.name);
-              document.getElementById('status').innerHTML =
-                'Obrigado por se conectar, ' + response.name + '!';
-            });
-          }
+          // Sign Up Client
+          // NAME ID EMAIL
+
         </script>
 
 
         <script>
                         function checkLogin(){
                             
-                        
                             FB.getLoginStatus(function(response) {
-                            if (response.status === 'connected') {
-                                // the user is logged in and has authenticated your
-                                // app, and response.authResponse supplies
-                                // the user's ID, a valid access token, a signed
-                                // request, and the time the access token 
-                                // and signed request each expire
-                                var uid = response.authResponse.userID;
-                                var accessToken = response.authResponse.accessToken;
 
+                            if (response.status === 'connected') {
+                                
                                 
 
+                        
                             } else if (response.status === 'not_authorized') {
                                 // the user is logged in to Facebook, 
                                 // but has not authenticated your app
@@ -152,6 +139,46 @@
 
 
                         </script>
+
+
+        <script type="text/javascript">
+
+            function clientSignUp(){
+
+            FB.api('/me', function(response) {
+
+                var clientName = response.name;
+                var clientId = response.id;
+       
+                    $.ajax({
+                            url: "db.php",
+                            type: "POST",
+                            data: {
+                                id: clientId,
+                                name: clientName,
+                                email: divEmail.value,
+                            },
+                            cache: false,
+                            success: function() {
+                                alert("OK");
+
+                                var div1 = document.getElementById('payment');
+                                var div2 = document.getElementById('confirma');
+
+                                div1.style.display = 'block';
+                                div2.style.display = 'none';
+                            },
+                            error: function() {
+                                alert("ERRO");
+                                },
+                            });
+
+            }); 
+        }
+
+        </script> 
+
+        <button type="button" class="btn btn-primary" id="confirma"  onclick="scheduleOperation();">Confirma</button>               
 
 <!--Facebook Login-->
                 
@@ -203,7 +230,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="form-group">
                         <h2>Forma de pagamento</h2>
-                        <form id="payment">
+                        <form id="payment" style="display: none;">
                         <label class="radio-inline"><input type="radio" name="optradio" value="1" onchange="optCash()" />Transferência Bancária (5% de desconto)</label>
                         <label class="radio-inline"><input type="radio" name="optradio" value="2" onchange="optCielo()"/>Cielo</label>
                         </form>
@@ -220,13 +247,19 @@
                                 var divFiveAppo = document.getElementById('fiveAppoInput');
                                 var divTenAppo = document.getElementById('tenAppoInput');
 
+                                var buttonOk = document.getElementById('confirma');
+                                var buttonNext = document.getElementById('proximo');
+
                                 div1.style.display = 'block';
                                 div2.style.display = 'none';
 
                                 divEmail.style.display = 'none';
                                 divOneAppo.style.display = 'none';
                                 divFiveAppo.style.display = 'none';
-                                divTenAppo.style.display = 'none'; 
+                                divTenAppo.style.display = 'none';
+
+                                buttonNext.style.display = 'block';
+                                buttonOk.style.display = 'none'; 
 
                             }
 
@@ -242,6 +275,9 @@
                                 var divFiveAppo = document.getElementById('fiveAppoInput');
                                 var divTenAppo = document.getElementById('tenAppoInput');
 
+                                var buttonOk = document.getElementById('confirma');
+                                var buttonNext = document.getElementById('proximo');
+
 
                                 div1.style.display = 'block';
                                 div2.style.display = 'none';    
@@ -249,7 +285,10 @@
                                 divEmail.style.display = 'none';
                                 divOneAppo.style.display = 'none';   
                                 divFiveAppo.style.display = 'none';  
-                                divTenAppo.style.display = 'none';                   
+                                divTenAppo.style.display = 'none';
+
+                                buttonNext.style.display = 'block';
+                                buttonOk.style.display = 'none';                    
                             }
 
                         </script>
@@ -385,8 +424,8 @@
                         </script>
 
                         <br><br>
-                        <div class="form-group" style="display: none;" id="emailInput">
-                        <label for="usr">Por favor, informe o seu endereço de E-mail desejado:</label>
+                        <div class="form-group"  id="emailInput">
+                        <label for="usr">Por favor, informe seu endereço de E-mail desejado:</label>
                         <input type="text" class="form-control" placeholder="E-mail" id="userEmail">
                         </div>
 
@@ -526,12 +565,12 @@
                                                 
  
                         </script>
-                        
 
                         
+                        
 
 
-                        <button type="button" class="btn btn-primary" onclick="scheduleOperation();">Próximo</button>
+                        <button type="button" class="btn btn-primary" id="proximo" style="display: none;" onclick="scheduleOperation();">Próximo</button>
 
                         <!-- FIRST TRY VVV -->
 
