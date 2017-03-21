@@ -147,6 +147,8 @@
 
             FB.api('/me', function(response) {
 
+                alert("FBAPI");
+
                 var clientName = response.name;
                 var clientId = response.id;
        
@@ -427,7 +429,7 @@
                         <div class="form-group"  id="emailInput">
                         <label for="usr">Por favor, informe seu endereço de E-mail desejado:</label>
                         <input type="text" class="form-control" placeholder="E-mail" id="userEmail">
-                        <button type="button" class="btn btn-primary" id="confirma" onclick="scheduleOperation();">Confirma</button>
+                        <button type="button" class="btn btn-primary" id="confirma" onclick="clientSignUp();">Confirma</button>
                         </div>
 
 
