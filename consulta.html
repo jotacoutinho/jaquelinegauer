@@ -147,18 +147,21 @@
 
             FB.api('/me', function(response) {
 
-                alert("FBAPI");
+                
 
                 var clientName = response.name;
                 var clientId = response.id;
+                var clientEmail = document.getElementById('userEmail').value;
        
+                alert(clientEmail);
+
                     $.ajax({
                             url: "db.php",
                             type: "POST",
                             data: {
                                 id: clientId,
                                 name: clientName,
-                                email: divEmail.value,
+                                email: clientEmail,
                             },
                             cache: false,
                             success: function() {

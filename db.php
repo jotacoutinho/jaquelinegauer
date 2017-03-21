@@ -4,5 +4,4 @@
 	$db = mysql_select_db('jaquelinegauer');
 
 
-
 ?>
