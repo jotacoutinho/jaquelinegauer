@@ -1,4 +1,14 @@
 <?php
+	
+		include_once('db.php');
 
-	$conn = mysql_connect('localhost', 'root', 'vertrigo');
-	$db = mysql_select_db('jaquelinegauer')
+		$id = $_POST['id'];
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+
+		if(mysql_query("INSERT INTO clients VALUES('$id', '$name', '$email'"))
+			echo "SUCCESS";
+		else
+			echo "ERROR";
+
+?>
