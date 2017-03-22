@@ -1,6 +1,6 @@
 <?php
 	
-		mysql_connect("localhost", "root", "vertrigo") or die(mysql_error());
+		mysql_connect("localhost:70/phpmyadmin", "root", "vertrigo") or die(mysql_error());
    		mysql_select_db("jaquelinegauer") or die(mysql_error());
 
 		$id = $_POST['id'];
