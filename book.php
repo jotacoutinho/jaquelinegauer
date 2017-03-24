@@ -1,11 +1,13 @@
 <?php
+
+		echo "INICIAR CONEXAO MYSQL";
 	
-		mysql_connect("localhost:70", "root", "vertrigo") or die(mysql_error());
+		mysql_connect("http://localhost:70", "root", "vertrigo") or die(mysql_error());
    		mysql_select_db("jaquelinegauer") or die(mysql_error());
 
-		$id = $_POST['id'];
-		$name = $_POST['name'];
-		$email = $_POST['email'];
+		$id = $_POST['clientId'];
+		$name = $_POST['clientName'];
+		$email = $_POST['clientEmail'];
 
 		try
 		{

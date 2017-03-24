@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<body id="page-top" class="index">
+
+
+		<div class="form-group"  id="nameInput">
+        <label for="usr">Por favor, informe seu nome:</label>
+        <input type="text" class="form-control" placeholder="Nome" id="userName">
+
+        <div class="form-group"  id="idInput">
+        <label for="usr">Por favor, informe seu id:</label>
+        <input type="text" class="form-control" placeholder="ID" id="userId">
+
+		<div class="form-group"  id="emailInput">
+        <label for="usr">Por favor, informe seu endereço de E-mail desejado:</label>
+        <input type="text" class="form-control" placeholder="E-mail" id="userEmail">
+
+
+        <br><br>
+  		<button type="button" class="btn btn-primary" id="proximo"  onclick="f1();">Confirma</button>
+
+
+		<script>
+
+		function f1(){
+
+
+			var clientName = document.getElementById('userName').value;
+            var clientId = document.getElementById('userId').value;
+            var clientEmail = document.getElementById('userEmail').value;
+
+			$.ajax({
+                            url: "http://localhost:70/book.php",
+                            type: "POST",
+                            data: {
+                                id: clientId,
+                                name: clientName,
+                                email: clientEmail,
+                            },
+                            cache: false,
+                            success: function() {
+                                alert("OK");
+
+                              
+                            },
+                            error: function() {
+                                alert("ERRO");
+                                },
+                            });
+
+
+
+
+
+
+		}
+
+
+
+		</script>  		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>
