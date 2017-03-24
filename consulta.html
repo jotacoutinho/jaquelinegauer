@@ -153,15 +153,17 @@
                 var clientId = response.id;
                 var clientEmail = document.getElementById('userEmail').value;
 
-                alert(clientName, clientId, clientEmail);
+                alert("Endereço de E-mail atualizado!");
                 //alert(clientId);
                 //alert(clientEmail);
        
                 var div1 = document.getElementById('payment');
                 var div2 = document.getElementById('confirma');
+                var div3 = document.getElementById('userEmail');
 
                 div1.style.display = 'block';
                 div2.style.display = 'none';
+                div3.style.display = 'none';
 
                    /* $.ajax({
                             url: "https://jotacoutinho.github.io/book.php",
@@ -242,8 +244,9 @@
             <div class ="row">
                 <div class="col-lg-12 text-center">
                     <div class="form-group">
-                        <h2>Forma de pagamento</h2>
+                        
                         <form id="payment" style="display: none;">
+                        <h2>Forma de pagamento</h2>
                         <label class="radio-inline"><input type="radio" name="optradio" value="1" onchange="optCash()" />Transferência Bancária (5% de desconto)</label>
                         <label class="radio-inline"><input type="radio" name="optradio" value="2" onchange="optCielo()"/>Cielo</label>
                         </form>
